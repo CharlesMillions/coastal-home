@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal Home Concierge - Rack Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            padding: 20px;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            padding: 0.5in;
+            background: white;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .card {
+            width: 3.5in;
+            height: 2in;
+            border: 2px solid #1a365d;
+            padding: 12px;
+            text-align: center;
+            page-break-inside: avoid;
+            position: relative;
+        }
+        
+        .card-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+            float: left;
+            margin-right: 10px;
+        }
+        
+        .card h2 {
+            font-size: 0.95rem;
+            color: #1a365d;
+            text-align: left;
+            margin-bottom: 2px;
+            line-height: 1.1;
+        }
+        
+        .card .tagline {
+            font-size: 0.6rem;
+            color: #5bb5b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+        
+        .card .message {
+            font-size: 0.7rem;
+            color: #374151;
+            text-align: left;
+            line-height: 1.3;
+        }
+        
+        .card .message strong {
+            color: #1a365d;
+        }
+        
+        .card .offer {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #4a90a4;
+            margin-top: 6px;
+        }
+        
+        .card .badges {
+            position: absolute;
+            bottom: 8px;
+            left: 12px;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .card .badge {
+            background: #1a365d;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.5rem;
+        }
+        
+        .card .website {
+            position: absolute;
+            bottom: 8px;
+            right: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #4a90a4;
+        }
+        
+        .cut-lines {
+            border: 1px dashed #ccc;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .instructions {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            .page {
+                margin: 0;
+                padding: 0.25in;
+            }
+            .instructions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <strong>Print these on card stock, then cut along the dashed lines!</strong><br>
+        6 rack cards per page • 3.5" x 2" each
+    </div>
+    
+    <div class="page">
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="cut-lines"></div>
+                <img src="logo.jpg" alt="Logo" class="card-logo">
+                <h2>Coastal Home Concierge</h2>
+                <p class="tagline">Clean Spaces. Carefree Living.</p>
+                <p class="message">See why your neighbor trusts us to keep their coastal home sparkling clean!</p>
+                <p class="offer">Get a Quote Today!</p>
+                <div class="badges">
+                    <span class="badge">Woman-Owned</span>
+                </div>
+                <span class="website">coastalhomeconcierge.net</span>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="cut-lines"></div>
+                <img src="logo.jpg" alt="Logo" class="card-logo">
+                <h2>Coastal Home Concierge</h2>
+                <p class="tagline">Clean Spaces. Carefree Living.</p>
+                <p class="message"><strong>Free Quote</strong> for your first cleaning! We serve Wrightsville Beach, Topsail Beach & Carolina Beach.</p>
+                <p class="offer">Call Us Today!</p>
+                <div class="badges">
+                    <span class="badge">Locally Owned</span>
+                </div>
+                <span class="website">coastalhomeconcierge.net</span>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="cut-lines"></div>
+                <img src="logo.jpg" alt="Logo" class="card-logo">
+                <h2>Coastal Home Concierge</h2>
+                <p class="tagline">Clean Spaces. Carefree Living.</p>
+                <p class="message"><strong>Airbnb Hosts:</strong> We handle turnover cleaning between guests! Fast & reliable.</p>
+                <p class="offer">First Cleaning FREE!</p>
+                <div class="badges">
+                    <span class="badge">Woman-Owned</span>
+                    <span class="badge">Locally Owned</span>
+                </div>
+                <span class="website">coastalhomeconcierge.net</span>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="cut-lines"></div>
+                <img src="logo.jpg" alt="Logo" class="card-logo">
+                <h2>Coastal Home Concierge</h2>
+                <p class="tagline">Clean Spaces. Carefree Living.</p>
+                <p class="message">Your neighbor's choice for <strong>professional house cleaning</strong> in coastal NC.</p>
+                <p class="offer">Mention This Card for 10% Off!</p>
+                <div class="badges">
+                    <span class="badge">Woman-Owned</span>
+                </div>
+                <span class="website">coastalhomeconcierge.net</span>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="cut-lines"></div>
+                <img src="logo.jpg" alt="Logo" class="card-logo">
+                <h2>Coastal Home Concierge</h2>
+                <p class="tagline">Clean Spaces. Carefree Living.</p>
+                <p class="message">Weekly • Bi-weekly • Monthly cleaning. We make your beach life carefree!</p>
+                <p class="offer">Get Your Free Quote!</p>
+                <div class="badges">
+                    <span class="badge">Locally Owned</span>
+                </div>
+                <span class="website">coastalhomeconcierge.net</span>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="cut-lines"></div>
+                <img src="logo.jpg" alt="Logo" class="card-logo">
+                <h2>Coastal Home Concierge</h2>
+                <p class="tagline">Clean Spaces. Carefree Living.</p>
+                <p class="message"><strong>Deep cleaning, move-in/move-out,</strong> and concierge services available.</p>
+                <p class="offer">First Cleaning 20% Off!</p>
+                <div class="badges">
+                    <span class="badge">Woman-Owned</span>
+                    <span class="badge">Locally Owned</span>
+                </div>
+                <span class="website">coastalhomeconcierge.net</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
