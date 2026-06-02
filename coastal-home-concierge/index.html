@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal Home Concierge | Clean Spaces. Carefree Living.</title>
+    <meta name="description" content="Professional home cleaning and concierge services for coastal living. Let us handle the details so you can enjoy your beachside paradise.">
+    <style>
+        :root {
+            --navy: #1a365d;
+            --ocean-blue: #4a90a4;
+            --seafoam: #5bb5b8;
+            --light-blue: #e8f4f8;
+            --sand: #fafaf9;
+            --white: #ffffff;
+            --text: #374151;
+            --text-light: #6b7280;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--white);
+            font-weight: 400;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 16px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--ocean-blue) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+        
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--seafoam);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--ocean-blue);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: var(--ocean-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(74, 144, 164, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 164, 0.4);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(180deg, rgba(26, 54, 93, 0.7) 0%, rgba(43, 108, 176, 0.5) 50%, rgba(56, 178, 172, 0.3) 100%), url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="90" cy="15" r="2" fill="%23fff" opacity="0.6"/><circle cx="75" cy="25" r="1.5" fill="%23fff" opacity="0.5"/><circle cx="85" cy="30" r="1" fill="%23fff" opacity="0.4"/></svg>');
+            pointer-events: none;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #bee3f8;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Wave Divider */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--white);
+        }
+        
+        .wave::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23ffffff" opacity=".25"/><path d="M0,0V15.81C13,33.53,41.15,48.65,75.34,48.91,109.34,49.18,142.86,32.69,180.87,24.67C218.89,16.68,255.09,15.81,291.18,20.69c36.28,4.78,70.53,17.9,105.45,34.66,34.92,16.72,68.25,37.05,97.61,52.26,28.12,14.55,54.08,31.78,78.66,45.52,25.29,14.26,48.29,31.59,68.67,51.09,20.72,19.45,39.2,41.93,55.7,66.15,16.93,24.56,31.67,51.79,43.52,81.21,11.93,29.59,21.55,60.78,27.88,91.86V120H0Z" fill="%23ffffff"/></svg>') no-repeat center bottom;
+            background-size: cover;
+        }
+        
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .service-card {
+            padding: 36px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
+            box-shadow: 0 8px 40px rgba(74, 144, 164, 0.1);
+            border: 1px solid rgba(74, 144, 164, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(74, 144, 164, 0.15);
+        }
+        
+        .service-icon {
+            width: auto;
+            height: auto;
+            background: transparent;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .service-card .learn-more {
+            color: var(--ocean-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .service-card .learn-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* About */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(180deg, rgba(26, 54, 93, 0.85) 0%, rgba(26, 54, 93, 0.7) 100%), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .about .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 24px;
+        }
+        
+        .about-features li {
+            color: white;
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .about-features li::before {
+            content: "✓";
+            background: var(--seafoam);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--sand) 100%);
+            border-radius: 24px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--sand);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .testimonial-card {
+            padding: 32px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .testimonial-card .quote {
+            font-size: 1.1rem;
+            color: var(--text);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--navy);
+        }
+        
+        .testimonial-card .location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            padding: 16px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .contact-details .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            padding: 32px;
+            background: var(--light-blue);
+            border-radius: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(74, 144, 164, 0.2);
+            border-radius: 25px;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background: var(--white);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--ocean-blue);
+            box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.1);
+        }
+        
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--navy);
+            text-align: center;
+        }
+        
+        footer p {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            body { overflow-x: hidden; }
+            
+            .nav-links-mobile { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 20px; flex-direction: column; gap: 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+            .nav-links-mobile.active { display: flex; }
+            .nav-links-mobile a { padding: 12px 0; border-bottom: 1px solid #eee; width: 100%; text-align: center; }
+            .hamburger { display: flex !important; }
+            
+            .hero { padding: 100px 20px 50px !important; }
+            .hero-tagline { font-size: 0.75rem !important; letter-spacing: 2px !important; }
+            .hero h1 { font-size: 1.6rem !important; line-height: 1.3; margin-bottom: 16px !important; }
+            .hero p { font-size: 0.95rem !important; padding: 0 10px; margin-bottom: 24px !important; }
+            .hero > .container > div { margin-bottom: 24px !important; }
+            .hero > .container > div:first-child { margin-bottom: 24px !important; }
+            .hero > .container > div:first-child span { font-size: 0.7rem !important; padding: 8px 14px !important; }
+            
+            .featured { padding: 50px 0 !important; }
+            .featured h2 { font-size: 1.5rem !important; }
+            .featured p { font-size: 0.95rem !important; }
+            
+            .services { padding: 50px 0 !important; }
+            .section-header h2 { font-size: 1.5rem; }
+            .section-header p { font-size: 0.95rem; }
+            .services-grid { grid-template-columns: 1fr; gap: 20px; }
+            .service-card { padding: 20px; }
+            .service-card h3 { font-size: 1.1rem; }
+            .service-card p { font-size: 0.9rem; }
+            
+            .featured div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 20px; }
+            .featured img { height: 200px !important; }
+            
+            .about { padding: 50px 0 !important; }
+            .about .container { grid-template-columns: 1fr; gap: 30px; }
+            .about-content h2 { font-size: 1.5rem; }
+            .about-content p { font-size: 0.95rem; }
+            .about-image { height: 180px; }
+            
+            .testimonials { padding: 50px 0 !important; }
+            .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+            .testimonial-card { padding: 20px; }
+            
+            .contact { padding: 50px 0 !important; }
+            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+            .contact-form { padding: 20px; }
+            
+            footer { padding: 30px 0; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.4rem !important; }
+            .hero p { font-size: 0.9rem !important; }
+            .container { padding: 0 16px; }
+        }
+        
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; }
+        .hamburger span { width: 25px; height: 3px; background: var(--navy); border-radius: 2px; transition: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 20px;">
+            <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="logo.jpg" alt="Coastal Home Concierge" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </a>
+            <div class="hamburger" onclick="document.querySelector('.nav-links-mobile').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links-mobile">
+                <a href="#services" style="color: var(--navy); text-decoration: none; font-size: 1rem; font-weight: 500;">Services</a>
+                <a href="#about" style="color: var(--navy); text-decoration: none; font-size: 1rem; font-weight: 500;">About</a>
+                <a href="#testimonials" style="color: var(--navy); text-decoration: none; font-size: 1rem; font-weight: 500;">Testimonials</a>
+                <a href="#contact" style="background: var(--ocean-blue); color: white; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-size: 1rem; font-weight: 500; display: inline-block; margin: 10px auto;">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <section class="hero" style="padding: 200px 0 120px; background: linear-gradient(180deg, rgba(26, 54, 93, 0.7) 0%, rgba(26, 54, 93, 0.4) 50%, rgba(74, 144, 164, 0.2) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85'); background-size: cover; background-position: center; background-attachment: fixed; text-align: center; position: relative;">
+        <div class="container">
+            <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;">
+                <span style="background: rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 30px; font-size: 0.85rem; color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px); letter-spacing: 1px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><circle cx="12" cy="8" r="4"/><path d="M12 12v8"/></svg>Woman-Owned & Locally Owned</span>
+            </div>
+            <p class="hero-tagline" style="font-size: 1rem; color: #bee3f8; margin-bottom: 16px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500;">Clean Spaces. Carefree Living.</p>
+            <h1 style="font-size: 3.5rem; font-weight: 600; color: white; line-height: 1.2; margin-bottom: 24px; text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Your Coastal Home,<br>Perfectly Maintained</h1>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.85); max-width: 550px; margin: 0 auto 40px; line-height: 1.7;">Professional home cleaning and concierge services that let you enjoy the beach lifestyle without lifting a finger.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="#contact" style="background: white; color: var(--navy); padding: 14px 36px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">Schedule Cleaning</a>
+                <a href="#services" style="background: transparent; color: white; padding: 14px 36px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,0.5); transition: all 0.3s;">View Services</a>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: url('https://images.unsplash.com/photo-1551193142-52f769a0b74b?w=1920&q=80') no-repeat center bottom; background-size: cover;"></div>
+    </section>
+    
+    <!-- Featured Properties -->
+    <section class="featured" style="padding: 100px 0; background: var(--white);">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 500; color: var(--navy); letter-spacing: 2px; margin-bottom: 16px;">Our Work</h2>
+                <p style="font-size: 1.1rem; color: var(--text-light); max-width: 500px; margin: 0 auto;">Beautiful coastal homes we have the privilege of caring for.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 15px 50px rgba(74, 144, 164, 0.15); transition: transform 0.4s ease;">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=85" alt="Luxury Beach House" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+                </div>
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 15px 50px rgba(74, 144, 164, 0.15); transition: transform 0.4s ease;">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=85" alt="Coastal Villa" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+                </div>
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 15px 50px rgba(74, 144, 164, 0.15); transition: transform 0.4s ease;">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85" alt="Beachfront Home" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive home care tailored to coastal living. From routine cleanings to deep seasonal preparations.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(232,244,248,0.95) 100%), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80'); background-size: cover; background-position: center;">
+                    <div class="service-icon" style="background: transparent; border: none;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4a90a4" stroke-width="1"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></div>
+                    <h3>Airbnb & Vacation Rental</h3>
+                    <p>Turnover cleaning for Airbnb and VRBO properties. We ensure your guest space is spotless and guest-ready between stays.</p>
+                    <a href="#contact" class="learn-more">Request Quote →</a>
+                </div>
+                
+                <div class="service-card" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(232,244,248,0.95) 100%), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80'); background-size: cover; background-position: center;">
+                    <div class="service-icon" style="background: transparent; border: none;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4a90a4" stroke-width="1.2"><path d="M2 12c2-3 4-5 8-5s6 2 8 5c2 3 2 7 0 10-2-3-4-5-8-5s-6 2-8 5"/></svg></div>
+                    <h3>Regular House Cleaning</h3>
+                    <p>Weekly, bi-weekly, or monthly cleanings tailored to your schedule. We handle dusting, vacuuming, mopping, and more.</p>
+                    <a href="#contact" class="learn-more">Request Quote →</a>
+                </div>
+                
+                <div class="service-card" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(232,244,248,0.95) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'); background-size: cover; background-position: center;">
+                    <div class="service-icon" style="background: transparent; border: none;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4a90a4" stroke-width="1.2"><path d="M2 12c2-3 4-5 8-5s6 2 8 5c2 3 2 7 0 10-2-3-4-5-8-5s-6 2-8 5"/></svg></div>
+                    <h3>Deep Cleaning</h3>
+                    <p>Thorough top-to-bottom cleaning for seasonal refreshes or special occasions. Includes baseboards, windows, and hard-to-reach spots.</p>
+                    <a href="#contact" class="learn-more">Request Quote →</a>
+                </div>
+                
+
+                
+                <div class="service-card" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(232,244,248,0.95) 100%), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80'); background-size: cover; background-position: center;">
+                    <div class="service-icon" style="background: transparent; border: none;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4a90a4" stroke-width="1.2"><path d="M2 12c2-3 4-5 8-5s6 2 8 5c2 3 2 7 0 10-2-3-4-5-8-5s-6 2-8 5"/></svg></div>
+                    <h3>Move-In/Move-Out</h3>
+                    <p>Complete cleaning for transitions. We ensure your new coastal home is ready or your old one is spotless for the next owner.</p>
+                    <a href="#contact" class="learn-more">Request Quote →</a>
+                </div>
+                
+                <div class="service-card" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(232,244,248,0.95) 100%), url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80'); background-size: cover; background-position: center;">
+                    <div class="service-icon" style="background: transparent; border: none;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4a90a4" stroke-width="1.2"><path d="M2 12c2-3 4-5 8-5s6 2 8 5c2 3 2 7 0 10-2-3-4-5-8-5s-6 2-8 5"/></svg></div>
+                    <h3>Concierge Services</h3>
+                    <p>While you're away, we check on your home, water plants, collect mail, and ensure everything is safe and sound.</p>
+                    <a href="#contact" class="learn-more">Request Quote →</a>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Local Experts in Coastal Home Care</h2>
+                <p>We understand the unique challenges of maintaining a beachside home in Coastal Carolina. From TOPSAIL Beach to Wrightsville Beach and Carolina Beach, we know the salt air, sand, and humidity that come with coastal living.</p>
+                <p>Our team is trained to protect your home's beauty while keeping it fresh, clean, and welcoming — so you can focus on enjoying coastal living.</p>
+                
+                <ul class="about-features">
+                    <li>Fully insured and vetted cleaning professionals</li>
+                    <li>Eco-friendly products available</li>
+                    <li>Flexible scheduling to fit your lifestyle</li>
+                    <li>100% satisfaction guarantee</li>
+                    <li>Local owned and operated</li>
+                </ul>
+            </div>
+            <div class="about-image" style="background: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80') center/cover; border-radius: 20px; min-height: 400px;">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Join the coastal homeowners who trust us with their homes.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote">"After spending summers here for years, we finally found a cleaning service that understands coastal homes. They handle the sand and salt like pros!"</p>
+                    <p class="author">Sarah M.</p>
+                    <p class="location">Wrightsville Beach</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="quote">"The concierge service is a game-changer. When we're away, we know our home is in good hands. Worth every penny."</p>
+                    <p class="author">Robert & Jennifer K.</p>
+                    <p class="location">Topsail Beach</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="quote">"They transformed our rental property before the summer season. Booked on short notice and the place was spotless. Highly recommend!"</p>
+                    <p class="author">Mike T.</p>
+                    <p class="location">Carolina Beach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to enjoy a cleaner, more carefree coastal lifestyle? Let's talk about how we can help.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <div class="icon">📍</div>
+                            <div>
+                                <strong>Service Area</strong><br>
+                                Wrightsville Beach • Topsail Beach • Carolina Beach, NC
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">✉️</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                coastalhomeclean@gmail.com
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">🕐</div>
+                            <div>
+                                <strong>Hours</strong><br>
+                                <strong>Cleaning:</strong> Monday - Sunday<br>
+                                <strong>Office:</strong> Monday-Friday 9:00-3:00pm
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="tel" name="phone" placeholder="Phone Number">
+                        <select name="service">
+                            <option value="">Select Service</option>
+                            <option value="regular">Regular House Cleaning</option>
+                            <option value="deep">Deep Cleaning</option>
+
+                            <option value="movein">Move-In/Move-Out</option>
+                            <option value="concierge">Concierge Services</option>
+                            <option value="airbnb">Airbnb / Vacation Rental</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea name="message" placeholder="Tell us about your home and cleaning needs..."></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <button onclick="window.print()" style="background: #1a365d; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; margin-bottom: 15px;">🖨️ Print This Page as Flyer</button>
+            <p>&copy; 2026 Coastal Home Concierge. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
