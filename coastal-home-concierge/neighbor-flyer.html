@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal Home Concierge - Neighbor Flyer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #1a365d;
+            background: white;
+            padding: 20px;
+        }
+        
+        .flyer {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 3px solid #1a365d;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            color: #1a365d;
+            margin-bottom: 8px;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            color: #5bb5b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            color: #374151;
+            margin: 25px 0;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 10px;
+        }
+        
+        .message strong {
+            color: #1a365d;
+        }
+        
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .badge {
+            background: #1a365d;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .offer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4a90a4;
+            margin: 25px 0;
+            padding: 15px;
+            border: 2px dashed #4a90a4;
+            border-radius: 10px;
+        }
+        
+        .services {
+            text-align: left;
+            margin: 20px 0;
+            padding: 15px;
+            background: #fafaf9;
+            border-radius: 10px;
+        }
+        
+        .services h3 {
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+        
+        .services ul {
+            list-style: none;
+            columns: 2;
+        }
+        
+        .services li {
+            padding: 4px 0;
+            font-size: 0.9rem;
+        }
+        
+        .services li::before {
+            content: "✓ ";
+            color: #5bb5b8;
+        }
+        
+        .contact {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .contact p {
+            font-size: 1rem;
+            margin: 8px 0;
+        }
+        
+        .website {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #4a90a4;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            .flyer {
+                border: 2px solid #1a365d;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <img src="logo.jpg" alt="Coastal Home Concierge" class="logo">
+        
+        <h1>Coastal Home Concierge</h1>
+        <p class="tagline">Clean Spaces. Carefree Living.</p>
+        
+        <div class="badges">
+            <span class="badge">Woman-Owned</span>
+            <span class="badge">Locally Owned</span>
+        </div>
+        
+        <div class="message">
+            <p>See why your neighbor trusts <strong>Coastal Home Concierge</strong> to keep their coastal home sparkling clean!</p>
+        </div>
+        
+        <div class="offer">
+            🧹 GET A QUOTE ON YOUR FIRST CLEANING! 🧹
+        </div>
+        
+        <div class="services">
+            <h3>Our Services:</h3>
+            <ul>
+                <li>Airbnb & Vacation Rental Turnover</li>
+                <li>Regular House Cleaning</li>
+                <li>Deep Cleaning</li>
+                <li>Move-In/Move-Out</li>
+                <li>Concierge Services</li>
+            </ul>
+        </div>
+        
+        <div class="services">
+            <h3>Serving:</h3>
+            <p>Wrightsville Beach • Topsail Beach • Carolina Beach, NC</p>
+        </div>
+        
+        <div class="contact">
+            <p class="website">coastalhomeconcierge.net</p>
+            <p>📧 coastalhomeclean@gmail.com</p>
+        </div>
+        
+        <p class="footer">We make your beach life carefree! 🏖️</p>
+    </div>
+</body>
+</html>
