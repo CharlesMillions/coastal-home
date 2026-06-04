@@ -561,7 +561,7 @@
                 <a href="#services" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 500;">Services</a>
                 <a href="#about" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 500;">About</a>
                 <a href="#testimonials" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 500;">Testimonials</a>
-                <a href="#contact" style="background: var(--ocean-blue); color: white; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-size: 1rem; font-weight: 500; display: inline-block; margin: 10px auto;">Get a Quote</a>
+                <a href="javascript:void(0)" onclick="openQuoteModal()" style="background: #f59e0b; color: white; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-size: 1rem; font-weight: 600; display: inline-block; margin: 10px auto; box-shadow: 0 4px 15px rgba(245,158,11,0.4);">⚡ Instant Quote</a>
             </div>
         </div>
     </nav>
@@ -577,7 +577,7 @@
             <p style="font-size: 1.2rem; color: rgba(255,255,255,0.85); max-width: 550px; margin: 0 auto 40px; line-height: 1.7;">Professional home cleaning and concierge services that let you enjoy the beach lifestyle without lifting a finger.</p>
             
             <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-                <a href="#contact" style="background: #4a90a4; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block;">Get Free Quote</a>
+                <a href="javascript:void(0)" onclick="openQuoteModal()" style="background: #4a90a4; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block;">⚡ Get Instant Quote</a>
                 <a href="#services" style="background: rgba(255,255,255,0.2); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 1rem; display: inline-block;">See Services</a>
             </div>
         </div>
@@ -765,6 +765,144 @@
             </div>
         </div>
     </section>
+    
+    <!-- Footer -->
+    <!-- Instant Quote Modal -->
+    <div id="quoteModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; overflow-y: auto; padding: 20px;">
+        <div style="max-width: 500px; margin: 40px auto; background: white; border-radius: 20px; padding: 32px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <button onclick="closeQuoteModal()" style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: #6b7280;">&times;</button>
+            <h2 style="color: #1a365d; margin-bottom: 8px; font-size: 1.8rem;">⚡ Instant Quote</h2>
+            <p style="color: #6b7280; margin-bottom: 24px;">Get your estimate in under 60 seconds!</p>
+            
+            <form id="instantQuoteForm">
+                <select id="quoteService" required style="width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 16px; background: white;">
+                    <option value="">Select Service *</option>
+                    <option value="regular">Regular House Cleaning</option>
+                    <option value="deep">Deep Cleaning</option>
+                    <option value="moveinout">Move-In/Move-Out</option>
+                    <option value="airbnb">Airbnb / Vacation Rental</option>
+                    <option value="concierge">Concierge Services</option>
+                </select>
+                
+                <select id="quoteSize" required style="width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 16px; background: white;">
+                    <option value="">Home Size *</option>
+                    <option value="studio">Studio / 1 Bedroom</option>
+                    <option value="2bed">2 Bedrooms</option>
+                    <option value="3bed">3 Bedrooms</option>
+                    <option value="4bed">4 Bedrooms</option>
+                    <option value="5bed">5+ Bedrooms</option>
+                </select>
+                
+                <select id="quoteFrequency" required style="width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 16px; background: white;">
+                    <option value="">Frequency *</option>
+                    <option value="one-time">One-Time</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="biweekly">Bi-Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                
+                <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;">
+                <p style="color: #1a365d; font-weight: 600; margin-bottom: 16px;">Your Information (required for quote)</p>
+                
+                <input type="text" id="quoteName" placeholder="Your Name *" required style="width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 12px;">
+                
+                <input type="email" id="quoteEmail" placeholder="Email Address *" required style="width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 12px;">
+                
+                <input type="tel" id="quotePhone" placeholder="Phone Number *" required style="width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 12px;">
+                
+                <input type="text" id="quoteAddress" placeholder="Property Address *" required style="width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 20px;">
+                
+                <button type="submit" class="btn" style="width: 100%; padding: 16px; font-size: 1.1rem;">Get My Instant Quote →</button>
+            </form>
+            
+            <div id="quoteResult" style="display: none; text-align: center; padding: 20px 0;">
+                <div style="font-size: 4rem; margin-bottom: 16px;">🏠</div>
+                <h3 style="color: #1a365d; font-size: 1.5rem; margin-bottom: 8px;">Your Estimated Quote</h3>
+                <p id="quoteAmount" style="font-size: 2.5rem; font-weight: 700; color: #4a90a4; margin-bottom: 16px;">$0</p>
+                <p style="color: #6b7280; margin-bottom: 24px;">This is an estimate. We'll contact you within 24 hours to confirm details.</p>
+                <p style="color: #1a365d; font-weight: 600;">📧 Confirmation sent to <span id="quoteEmailDisplay"></span></p>
+                <button onclick="closeQuoteModal()" class="btn" style="margin-top: 20px;">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    // Instant Quote Modal Functions
+    function openQuoteModal() {
+        document.getElementById('quoteModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeQuoteModal() {
+        document.getElementById('quoteModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        // Reset form
+        document.getElementById('instantQuoteForm').reset();
+        document.getElementById('quoteResult').style.display = 'none';
+        document.getElementById('instantQuoteForm').style.display = 'block';
+    }
+    
+    // Close modal when clicking outside
+    document.getElementById('quoteModal').addEventListener('click', function(e) {
+        if (e.target === this) closeQuoteModal();
+    });
+    
+    // Quote calculation
+    document.getElementById('instantQuoteForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const service = document.getElementById('quoteService').value;
+        const size = document.getElementById('quoteSize').value;
+        const frequency = document.getElementById('quoteFrequency').value;
+        const name = document.getElementById('quoteName').value;
+        const email = document.getElementById('quoteEmail').value;
+        const phone = document.getElementById('quotePhone').value;
+        const address = document.getElementById('quoteAddress').value;
+        
+        if (!service || !size || !frequency || !name || !email || !phone || !address) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Base prices by service
+        const basePrices = {
+            'regular': 120,
+            'deep': 250,
+            'moveinout': 300,
+            'airbnb': 150,
+            'concierge': 100
+        };
+        
+        // Size multipliers
+        const sizeMultipliers = {
+            'studio': 0.7,
+            '2bed': 1,
+            '3bed': 1.3,
+            '4bed': 1.6,
+            '5bed': 2
+        };
+        
+        // Frequency discounts
+        const frequencyMultipliers = {
+            'one-time': 1,
+            'weekly': 0.85,
+            'biweekly': 0.9,
+            'monthly': 0.95
+        };
+        
+        let basePrice = basePrices[service] || 120;
+        let sizeMult = sizeMultipliers[size] || 1;
+        let freqMult = frequencyMultipliers[frequency] || 1;
+        
+        let estimate = Math.round(basePrice * sizeMult * freqMult);
+        
+        // Show result
+        document.getElementById('instantQuoteForm').style.display = 'none';
+        document.getElementById('quoteResult').style.display = 'block';
+        document.getElementById('quoteAmount').textContent = '$' + estimate;
+        document.getElementById('quoteEmailDisplay').textContent = email;
+    });
+    </script>
     
     <!-- Footer -->
     <footer>
