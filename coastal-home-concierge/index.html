@@ -508,66 +508,30 @@
         @media (max-width: 768px) {
             body { overflow-x: hidden; }
             
-            /* Unified header - remove nav shadow, blend into hero */
-            nav { 
-                background: transparent !important; 
-                box-shadow: none !important;
-                padding: 12px 0 !important;
-            }
+            /* Solid navy background on mobile - simpler */
+            nav { background: #1a365d !important; padding: 12px 16px !important; }
             
-            /* Unified hero that extends behind nav */
             .hero { 
-                padding: 60px 20px 50px !important; 
-                min-height: 380px !important; 
-                background-attachment: scroll !important;
-                background: linear-gradient(180deg, #1a365d 0%, #1a365d 30%, #234e70 60%, #2d6a8f 100%), url('beach-house-new.jpg?w=800&q=60') !important;
-                background-size: cover !important;
-                background-position: center 20% !important;
-                margin-top: 0 !important;
-                position: relative;
-            }
-            
-            /* Add overlay to blend hero with nav */
-            .hero::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                background: linear-gradient(180deg, rgba(26,54,93,0.9) 0%, rgba(26,54,93,0.7) 40%, rgba(26,54,93,0.4) 70%, rgba(26,54,93,0.2) 100%);
-                pointer-events: none;
-            }
-            
-            /* Logo styling to match unified header */
-            nav .logo-img, nav img[src="logo.jpg"] { 
-                width: 44px !important; 
-                height: 44px !important; 
-                border-radius: 12px !important;
-                border: 2px solid rgba(255,255,255,0.4) !important;
-                box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+                padding: 60px 20px 40px !important; 
+                min-height: auto !important; 
                 background: #1a365d !important;
             }
             
-            /* Ensure content sits above overlay */
-            .hero .container {
-                position: relative;
-                z-index: 2;
-            }
-            
             .hero-tagline { font-size: 0.75rem !important; letter-spacing: 2px !important; }
+            .hero h1 { font-size: 1.5rem !important; line-height: 1.2 !important; }
+            .hero > div > p { font-size: 0.9rem !important; display: none !important; }
+            .hero > .container > div:first-child { display: none !important; }
+            .hero a { padding: 12px 20px !important; font-size: 0.9rem !important; width: 100% !important; box-sizing: border-box !important; margin-bottom: 10px !important; }
+            .hero > .container > div:last-child { flex-direction: column !important; gap: 10px !important; }
+            .logo-text-mobile { font-size: 1rem !important; }
             
+            /* Mobile nav */
+            .hero .container {
+            /* Mobile nav */
             .nav-links-mobile { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #163256; padding: 20px; flex-direction: column; gap: 0; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 1001; border-top: 1px solid rgba(255,255,255,0.1); }
             .nav-links-mobile.active { display: flex; }
             .nav-links-mobile a { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; text-align: center; color: white !important; }
             .hamburger { display: flex !important; }
-            .hero h1 { font-size: 1.6rem !important; line-height: 1.2; margin-bottom: 12px !important; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-            .hero p { font-size: 0.95rem !important; padding: 0 10px; margin-bottom: 20px !important; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
-            .hero > .container > div { margin-bottom: 24px !important; }
-            .hero > .container > div:first-child { margin-bottom: 24px !important; flex-direction: column; gap: 8px; }
-            .hero > .container > div:first-child span { font-size: 0.65rem !important; padding: 6px 12px !important; }
-            .hero div[style*="flex-wrap: wrap"] { flex-direction: column; gap: 12px !important; }
-            .hero div[style*="flex-wrap: wrap"] a { width: 100%; text-align: center; }
             
             .featured { padding: 50px 0 !important; }
             .featured h2 { font-size: 1.5rem !important; }
